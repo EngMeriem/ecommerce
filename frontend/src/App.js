@@ -1,8 +1,8 @@
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 import { Container, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import HomeScreen from './screens/HomeScreen.js';
-import ProductScreen from './screens/ProductScreen.js';
 
 function App() {
   return (
