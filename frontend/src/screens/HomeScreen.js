@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import logger from 'use-reducer-logger';
 import axios from 'axios';
 import Product from '../components/Product';
 import { Row, Col } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 // import data from '../data';
 
 const reducer = (state, action) => {
@@ -13,6 +14,8 @@ const reducer = (state, action) => {
       return { ...state, products: action.payload, loading: false };
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
+    default:
+      return state;
   }
 };
 
@@ -40,6 +43,9 @@ const HomeScreen = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Amazona</title>
+      </Helmet>
       <h1> Featured Products</h1>
       <div className="products">
         {loading ? (
