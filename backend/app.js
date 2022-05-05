@@ -3,6 +3,7 @@ const data = require('./data');
 const mongoose = require('mongoose');
 const seedRouter = require('./routes/seedRoutes');
 const productRouter = require('./routes/productRoutes');
+const userRouter = require('./routes/userRoutes');
 require('dotenv').config({ path: './config/.env' });
 
 mongoose
@@ -15,8 +16,12 @@ mongoose
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
+app.use('/api/users', userRouter);
 
 // app.use((req, res, next) => {
 //   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -30,5 +35,9 @@ app.use('/api/products', productRouter);
 //   );
 //   next();
 // });
+
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
+});
 
 module.exports = app;
