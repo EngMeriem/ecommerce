@@ -52,6 +52,13 @@
    3. click handler for checkout
 
 10. Connect To MongoDB Database
+
     1. create atlas monogodb database
     2. npm install mongoose
     3. connect to mongodb database
+
+11. Seed Sample Products
+    1. create Product model
+    2. create seed route
+    3. use route in server.js
+    4. seed sample product
