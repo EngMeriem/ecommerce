@@ -70,6 +70,13 @@
     2. seed sample users
 
 13. Create Signin Backend API
+
     1. create signin api
     2. npm install jsonwebtoken
     3. define generateToken
+
+14. Complete Signin Screen
+
+    1. handle submit action
+    2. save token in store and local storage
+    3. show user name in header
