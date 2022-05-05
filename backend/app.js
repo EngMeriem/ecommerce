@@ -1,15 +1,15 @@
 const express = require('express');
 const data = require('./data');
+const mongoose = require('mongoose');
+require('dotenv').config({ path: './config/.env' });
 
-// mongoose
-//   .connect(
-//     'mongodb+srv://go-fullstack:go-fullstack@cluster0.6z7f7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true
-//     }
-//   )
-//   .then(() => console.log('Connexion à MongoDB réussie !'))
-//   .catch(() => console.log('Connexion à MongoDB échouée !'));
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('MongoDB successfully connected !'))
+  .catch((err) => console.log(err.message, 'MongoDB NOT connected !'));
 
 const app = express();
 

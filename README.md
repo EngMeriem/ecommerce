@@ -46,6 +46,12 @@
    3. create action column
 
 9. Complete Cart Screen
+
    1. click handler for inc/dec item
    2. click handler for remove item
    3. click handler for checkout
+
+10. Connect To MongoDB Database
+    1. create atlas monogodb database
+    2. npm install mongoose
+    3. connect to mongodb database
